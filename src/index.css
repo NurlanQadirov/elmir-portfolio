@@ -1,61 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  /* Şriftlərin tanıdılması (əvvəlki kimi) */
   --font-sans: "Outfit", sans-serif;
   --font-mono: "Space Grotesk", monospace;
 
-  /* --- YENİ VƏ YENİLƏNMİŞ ANIMASIYALAR --- */
-
-  /* Sol tərəf üçün kaskad açılış (əvvəlki kimi) */
+  /* Mövcud kaskad animasiyalar */
   --animate-fade-in: fade-in 1s ease-in-out forwards;
   --animate-fade-in-up: fade-in-up 1.2s ease-out forwards;
-
-  /* 1. Status dairəsi üçün mərkəzlənmiş yumşaq pulsasiya (YENİ) */
   --animate-perfect-pulse: perfect-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  /* YENİ: Skaner və Qradiyent animasiyaları */
+  --animate-scan: scan 3s ease-in-out infinite;
+  --animate-gradient-x: gradient-x 4s ease infinite;
 
-  /* 2. Sol arxa fonda üzən nöqtələr üçün yavaş hərəkət (YENİ) */
-  --animate-float-nodes: float-nodes 20s linear infinite;
-
-  /* Keyframes tərifi */
   @keyframes fade-in {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
 
   @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
-  /* Status işığı üçün tam dairəvi böyümə effekti */
   @keyframes perfect-pulse {
-    0% {
-      transform: scale(0.9);
-      opacity: 0.7;
-    }
-    70% {
-      transform: scale(2);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 0;
-    }
+    0% { transform: scale(0.9); opacity: 0.7; }
+    70% { transform: scale(2); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
   }
 
-  /* Arxa fondakı kiber nöqtələrin yavaş hərəkəti */
-  @keyframes float-nodes {
-    0% { transform: translateY(0) translateX(0); }
-    25% { transform: translateY(-15px) translateX(10px); }
-    50% { transform: translateY(-30px) translateX(-10px); }
-    75% { transform: translateY(-15px) translateX(5px); }
-    100% { transform: translateY(0) translateX(0); }
+  /* Lazer skaneri üçün yuxarıdan aşağı hərəkət */
+  @keyframes scan {
+    0% { transform: translateY(-50px); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(300px); opacity: 0; }
+  }
+
+  /* Başlığın içində rənglərin axması effekti */
+  @keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 }

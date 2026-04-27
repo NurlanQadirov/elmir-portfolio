@@ -8,69 +8,43 @@ export default function Hero() {
       id="hero" 
       className="relative min-h-screen bg-[#050505] overflow-hidden flex items-center pt-24 pb-12"
     >
-      {/* --- ARXA FON ELEMENTLƏRİ --- */}
-
-      {/* 1. Ümumi Şəbəkə (Əvvəlki kimi, v4 formatında bg-[size:64px]) */}
+      {/* Ümumi Şəbəkə və Parıltı */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:64px]"></div>
-      
-      {/* 2. Sağ tərəfdəki böyük bənövşəyi parıltı (Əvvəlki kimi) */}
       <div className="absolute right-0 top-1/4 w-150 h-150 bg-purple-600/10 blur-[150px] rounded-full pointer-events-none"></div>
 
-      {/* 3. YENİ: Sol tərəfdəki boşluğu doldurmaq üçün üzən kiber nöqtələr */}
-      <div className="absolute left-0 top-0 w-1/2 h-full overflow-hidden pointer-events-none opacity-20">
-        <div className="absolute inset-0 animate-float-nodes">
-          {/* Nöqtələr (SVG grid pattern) */}
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="dotPattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                {/* Bənövşəyi nöqtələr */}
-                <circle cx="2" cy="2" r="1.5" fill="#a855f7" fillOpacity="0.3" />
-                {/* Mavi nöqtələr */}
-                <circle cx="22" cy="22" r="1" fill="#3b82f6" fillOpacity="0.2" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#dotPattern)" />
-          </svg>
-        </div>
-      </div>
-
-      {/* --- ƏSAS MƏZMUN KONTEYNERİ --- */}
       <div className="relative max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-12 z-10">
         
-        {/* SOL TƏRƏF (Canlandırılmış Yazılar) */}
-        <div className="flex-1 text-left">
+        {/* --- SOL TƏRƏF --- */}
+        <div className="flex-1 text-left relative mt-8 md:mt-0">
           
-          {/* 1. Status Göstəricisi - Düzəldilmiş Pulsasiya ilə */}
+          {/* Şaquli Lazer Skaner Xətti (Saxlanıldı) */}
+          <div className="absolute -left-6 top-8 bottom-8 w-[1px] bg-white/5 hidden md:block">
+            <div className="absolute top-0 left-[-1px] w-[3px] h-32 bg-linear-to-b from-transparent via-purple-500 to-transparent animate-scan shadow-[0_0_15px_#a855f7]"></div>
+          </div>
+
+          {/* Status Göstəricisi */}
           <div className="opacity-0 animate-fade-in inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
-            
-            {/* Pulsasiya edən dairə konteyneri */}
             <span className="relative flex h-3 w-3 items-center justify-center">
-              {/* YENİLƏNMİŞ: Ətrafına mükəmməl mərkəzlənmiş, dairəvi işıq saçan parıltı */}
               <span className="animate-perfect-pulse absolute inline-flex h-full w-full rounded-full bg-purple-500/60 shadow-[0_0_15px_5px_rgba(168,85,247,0.4)]"></span>
-              
-              {/* Mərkəzdəki sabit dairə */}
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-purple-500 shadow-[0_0_10px_#a855f7]"></span>
             </span>
-            
             <span className="text-xs font-mono tracking-widest text-slate-400 uppercase">
               Sistem_Aktiv
             </span>
           </div>
 
-          {/* 2. Böyük Başlıq (v4 formatında bg-linear-to-r) */}
+          {/* Hərəkətli Qradiyent Başlıq */}
           <h1 className="opacity-0 animate-fade-in-up delay-300 text-5xl lg:text-7xl font-extrabold text-white tracking-tighter leading-[1.05] mb-6">
             Rəqəmsal <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-blue-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 via-blue-400 to-purple-500 bg-[size:200%_auto] animate-gradient-x">
               Müdafiə Xətti
             </span>
           </h1>
 
-          {/* 3. Alt Mətn */}
           <p className="opacity-0 animate-fade-in-up delay-500 text-lg text-slate-400 leading-relaxed mb-10 max-w-xl font-light">
             Sistemlərinizi müasir rəqəmsal təhdidlərdən qoruyan, zəifliklərin aşkarlanması və şəbəkə təhlükəsizliyi üzrə ixtisaslaşmış strateji yanaşmalar.
           </p>
 
-          {/* 4. Düymələr */}
           <div className="opacity-0 animate-fade-in-up delay-700 flex flex-wrap items-center gap-5">
             <button 
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
@@ -90,7 +64,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* SAĞ TƏRƏF (Canlandırılmış Komponent, Əvvəlki kimi) */}
+        {/* --- SAĞ TƏRƏF --- */}
         <div className="hidden md:flex flex-1 justify-end relative">
           <div className="relative w-80 h-80 flex items-center justify-center group">
             <div className="absolute inset-0 bg-purple-600/20 rounded-full blur-[80px] group-hover:bg-purple-500/30 transition-all duration-700 animate-pulse"></div>
