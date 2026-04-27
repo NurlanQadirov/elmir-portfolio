@@ -12,7 +12,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = ["About", "Skills", "Experience", "Education", "Contact"];
+  const links = ["About", "Skills", "Experience", "Education"];
 
   return (
     <nav
@@ -48,7 +48,7 @@ export default function Navbar() {
             onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
             className="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all border border-white/5"
           >
-            Əlaqə
+            Contact
           </button>
         </div>
 
