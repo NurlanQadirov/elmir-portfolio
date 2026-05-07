@@ -46,13 +46,13 @@ export default function Hero() {
           </p>
 
           <div className="opacity-0 animate-fade-in-up delay-700 flex flex-wrap items-center gap-5">
-            <button 
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white px-7 py-3.5 rounded-xl font-semibold transition-all shadow-[0_0_20px_rgba(168,85,247,0.2)]"
-            >
-              Təhlükəsizlik Auditi
-              <ArrowRight size={18} />
-            </button>
+          <a 
+  href="mailto:elmrrcbl.2005@gmail.com?subject=CV Request&body=Hi Elmir, I would like to request your CV."
+  className="flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white px-7 py-3.5 rounded-xl font-semibold transition-all shadow-[0_0_20px_rgba(168,85,247,0.2)]"
+>
+  REQUEST CV
+  <ArrowRight size={18} />
+</a>
             <a 
               href={DATA.linkedinHref} 
               target="_blank" 
