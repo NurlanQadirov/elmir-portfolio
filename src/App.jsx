@@ -8,6 +8,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+
 export default function App() {
   return (
     <div className="font-sans bg-[#050505] text-slate-300 antialiased selection:bg-purple-500/30">
